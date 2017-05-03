@@ -96,22 +96,36 @@
         }
     });
     
-    /* Maps */
+    // /* Maps */
     
-    var map = new GMaps({
-      div: '.map',
-      lat: 38.7436266,
-      lng: -9.05,
-      zoom: 12
-    });
+    // var map = new GMaps({
+    //   div: '.map',
+    //   lat: 38.7436266,
+    //   lng: -9.05,
+    //   zoom: 12
+    // });
     
-    map.addMarker({
-      lat: 38.7436266,
-      lng: -9.1602037,
-      title: 'Lisbon',
-      infoWindow: {
-          content: '<p>Our Lisbon HQ</p>'
-      }
-    });
+    // map.addMarker({
+    //   lat: 38.7436266,
+    //   lng: -9.1602037,
+    //   title: 'Lisbon',
+    //   infoWindow: {
+    //       content: '<p>Our Lisbon HQ</p>'
+    //   }
+    // });
     
 })(jQuery);
+
+function initMap() {
+var loc = {lat: 38.7436266, lng: 9.1602037};
+var map = new google.maps.Map(document.getElementById('map'), {
+  zoom: 4,
+  center: loc
+});
+
+var marker = new google.maps.Marker({
+  position: loc,
+  map: map,
+  title: 'Our Lisbon HQ'
+});
+}
