@@ -444,8 +444,22 @@
         <script src="assets/vendors/js/jquery-3.1.1.min.js"></script>
         <script src="assets/vendors/js/jquery.waypoints.min.js"></script>
 
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN7r-1IQRd5ihR07A3MlFke9q0BN9XX8M&callback=initMap"></script>
+        <script>
+            function initMap() {
+            var loc = {lat: 38.7436266, lng: 9.1602037};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 4,
+              center: loc
+            });
 
+            var marker = new google.maps.Marker({
+              position: loc,
+              map: map,
+              title: 'Our Lisbon HQ'
+            });
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN7r-1IQRd5ihR07A3MlFke9q0BN9XX8M&callback=initMap"></script>
         <script src="assets/vendors/js/gmap.js"></script>
         
         <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
